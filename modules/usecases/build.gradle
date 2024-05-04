@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+    id 'org.kordamp.gradle.jandex'
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'jakarta.enterprise:jakarta.enterprise.cdi-api'
+    implementation project(':modules:domain')
+    implementation project(':modules:boundary-usecase-produce-products')
+    implementation project(':modules:boundary-service-retrieve-products')
+    implementation project(':modules:boundary-usecase-consume-product')
+    implementation project(':modules:boundary-service-persist-product')
+}
+
+apply from: rootProject.file('buildSrc/shared.gradle')

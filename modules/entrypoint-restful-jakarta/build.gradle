@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+    id 'org.kordamp.gradle.jandex'
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api'
+    implementation project(':modules:boundary-usecase-produce-products')
+    implementation project(':modules:boundary-usecase-consume-product')
+}
+
+apply from: rootProject.file('buildSrc/shared.gradle')
